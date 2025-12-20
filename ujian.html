@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>ujian</title>
+</head>
+<body>
+	<script>
+				
+				
+
+let pembeli = parseInt(prompt("Jumlah Pembeli"));
+let pembelinya = [];
+let harga = 5000;
+let pendapatan = 0;
+let pembeliDiskonBesar = 0;
+let pembeliDiskonKecil = 0;
+
+for (let pembeliKe = 1; pembeliKe <= pembeli; pembeliKe++) {
+  console.log(`Pembeli ${pembeliKe}`);
+
+  let jumlahBuku = parseInt(prompt(`Pembeli ke ${pembeliKe}: berapa eksemplar?`));
+
+  let totalHarga = jumlahBuku * harga;
+  let totalBayar = totalHarga;
+
+  if (jumlahBuku > 100 && jumlahBuku < 200) {
+    let diskon100 = 100 * harga * 0.05;
+    let hasil100 = 100 * harga - diskon100;
+
+    let sisaBuku15 = (jumlahBuku - 100) * harga * 0.15;
+    let hasilSisa15 = (jumlahBuku - 100) * harga - sisaBuku15;
+
+    pembeliDiskonKecil++;
+    totalBayar = hasil100 + hasilSisa15;
+  } else if (jumlahBuku > 200) {
+    let diskon1007 = 100 * harga * 0.07;
+    let hasil1007 = 100 * harga - diskon1007;
+
+    let diskon20017 = 100 * harga * 0.17;
+    let hasil20017 = 100 * harga - diskon20017;
+
+    let sisaBuku27 = (jumlahBuku - 200) * harga * 0.27;
+    let hasilSisa27 = (jumlahBuku - 200) * harga - sisaBuku27;
+
+    pembeliDiskonBesar++;
+    totalBayar = hasil1007 + hasil20017 + hasilSisa27;
+  }
+
+  pendapatan += totalBayar;
+
+  let dataPembeli = {
+    pembeli_yang_ke: pembeliKe,
+    jumlahBuku: jumlahBuku,
+    totalBayar: totalBayar
+  };
+  pembelinya.push(dataPembeli);
+
+  console.log(`Total Harga  : Rp ${totalHarga}`);
+  console.log(`Total Bayar  : Rp ${totalBayar}`);
+}
+
+console.log("=== TABEL TRANSAKSI ===");
+console.table(pembelinya);
+
+console.log("=== REKAPAN ===");
+console.log(`Total Pendapatan  : Rp ${pendapatan}`);
+console.log(`Rata-rata Pembeli : Rp ${pendapatan / pembeli}`);
+console.log(`Pembeli Diskon Besar : ${pembeliDiskonBesar}`);
+console.log(`Pembeli Diskon Kecil : ${pembeliDiskonKecil}`);
+</script>
+
+</body>
+</html>
+				
+		
+		
+		</script>
+				
+ 
+ 
+</body>
+</html>

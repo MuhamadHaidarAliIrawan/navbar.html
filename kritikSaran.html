@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Kritik & Saran</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #1e90ff, #87cefa, #ffffff);
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 10px;
+            border: none; /* tidak ada garis */
+        }
+
+        .card-input {
+            width: 280px;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .card-input:focus {
+            border-color: #ffffff;
+            box-shadow: 0 0 10px #ffffff;
+        }
+
+        .card-btn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background: #ffffff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .card-btn:hover {
+            background: #000000;
+            color: white;
+            box-shadow: 0 0 15px white;
+        }
+
+        .btn-container {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td><input type="text" placeholder="Nama Anda" class="card-input"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Email" class="card-input"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Hp" class="card-input"></td>
+        </tr>
+        <tr>
+            <td><textarea placeholder="Tuliskan pesan anda..." class="card-input" style="height: 80px;"></textarea></td>
+        </tr>
+        <tr>
+            <td class="btn-container">
+                <button class="card-btn">Kirim</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
